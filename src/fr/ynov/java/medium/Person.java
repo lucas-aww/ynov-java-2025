@@ -1,14 +1,16 @@
 package fr.ynov.java.medium;
 
+import java.time.LocalDate;
+
 public class Person {
     private String name;
-    private int birthDate;
+    private String birthDate;
     private String gender;
     private float height;
     private float weight;
     private Nationality nationality;
 
-    public Person(String name, int birthDate, String gender, float height, float weight, Nationality nationality) {
+    public Person(String name, String birthDate, String gender, float height, float weight, Nationality nationality) {
         this.name = name;
         this.birthDate = birthDate;
         this.gender = gender;
@@ -16,6 +18,11 @@ public class Person {
         this.weight = weight;
         this.nationality = nationality;
     }
+public int getAge() {
+        LocalDate today = LocalDate.now();
+        LocalDate birth = LocalDate.parse(birthDate);
+        return today.getYear() - birth.getYear();
+}
 
     public void printAttributes() {
         System.out.println("Name: " + name);
