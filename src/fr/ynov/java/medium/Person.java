@@ -18,11 +18,11 @@ public class Person {
         this.weight = weight;
         this.nationality = nationality;
     }
-public int getAge() {
+    public int getAge() {
         LocalDate today = LocalDate.now();
         LocalDate birth = LocalDate.parse(birthDate);
         return today.getYear() - birth.getYear();
-}
+    }
 
     public void printAttributes() {
         System.out.println("Name: " + name);
@@ -40,7 +40,7 @@ public int getAge() {
     }
 
     public static void main(String[] args) {
-        Person person = new Person("John", 25, "male", 6.1f, 85.5f, Nationality.FRENCH);
+        Person person = new Person("John", "25", "male", 6.1f, 85.5f, Nationality.FRENCH);
         person.printAttributes();
     }
 }
